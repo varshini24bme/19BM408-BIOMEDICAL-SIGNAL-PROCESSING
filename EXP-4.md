@@ -51,8 +51,37 @@ Twiddle factors are applied after subtraction
 6)Stop the program
 
 # MATLAB CODE :
+~~~
+% DIF - RADIX-2 FAST FOURIER TRANSFORM
 
+clc;
+clear;
+close all;
+
+% Input discrete-time signal (N = 8, power of 2)
+x = [1 2 3 4 4 3 2 1];
+N = length(x);
+
+% Compute FFT (Radix-2 DIF)
+X = fft(x);
+
+% Display FFT values
+disp('DIF-FFT Output:');
+disp(X);
+
+% Frequency index
+k = 0:N-1;
+
+% Plot magnitude spectrum
+figure;
+stem(k, abs(X), 'filled');
+xlabel('Frequency index k');
+ylabel('|X(k)|');
+title('Magnitude Spectrum using Radix-2 DIF FFT');
+grid on;
+~~~
 # OUTPUT GRAPH :
+<img width="677" height="478" alt="image" src="https://github.com/user-attachments/assets/d4596e4f-2218-4bef-a47a-71b5e89e1261" />
 
 # RESULT :
 Thus, the Fast Fourier Transform of the given discrete-time signal was successfully computed using the Radix-2 Decimation-in-Frequency (DIF) FFT algorithm in MATLAB.
